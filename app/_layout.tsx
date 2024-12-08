@@ -16,7 +16,7 @@ export default function RootLayout() {
           fontSize: 24,
         },
       }}>
-      <Stack.Screen name="index" options={{ title: 'Echo Sign' }} />
+      <Stack.Screen name="index" options={{ headerShown: false }} />
     </Stack>
   );
 }
