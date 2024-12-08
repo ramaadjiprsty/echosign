@@ -1,5 +1,4 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import React from 'react';
 
 import { Stack } from 'expo-router';
 
@@ -16,7 +15,10 @@ export default function RootLayout() {
           fontSize: 24,
         },
       }}>
-      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="index" options={{ title: 'Home'}} />
+      <Stack.Screen name='(screen)' options={{ headerShown: false}}/>
     </Stack>
   );
 }
+
+

@@ -1,12 +1,10 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import '../global.css';
-import Card from '../components/Card';
-import { FlatList } from 'react-native';
-import { cardData } from '../data/cardData';//
 import { router } from 'expo-router';
-import MainMenuHeader from '../components/MainMenuHeader';
+import { FlatList, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import Card from '../components/Card';
+// import MainHeader from '../components/MainHeader';
+import { cardData } from '../data/cardData'; //
+import '../global.css';
 
 export default function App() {
   const handlePress = (destination: string) => {
@@ -16,7 +14,8 @@ export default function App() {
 
   return (
     <SafeAreaView>
-      <MainMenuHeader />
+      {/* <MainHeader /> */}
+      {/* <MainHero /> */}
       <View className='justify-center mx-3'>
         <FlatList
           data={cardData}
