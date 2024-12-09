@@ -8,7 +8,7 @@ enum CardTitle {
   ABOUT = "Tentang",
 }
 
-type CardData = {
+interface CardData {
   key: CardTitle;
   image: ImageSourcePropType;
   color: string;
