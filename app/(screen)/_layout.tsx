@@ -5,12 +5,13 @@ const ScreenLayout = () => {
     <Stack
       screenOptions={{
         headerStyle: {
-          backgroundColor: '#519872',
+          backgroundColor: '#0c0a09',
         },
-        headerTintColor: '#fff',
+        headerTitleAlign: 'center',
         headerTitleStyle: {
           fontWeight: 'bold',
           fontSize: 24,
+          color: 'white',
         },
       }}
       >

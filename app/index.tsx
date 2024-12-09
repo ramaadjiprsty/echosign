@@ -13,7 +13,8 @@ export default function App() {
   
 
   return (
-    <View className='m-4'>
+    <View className='h-full w-full bg-violet-500'>
+    <View className='m-4 bg-white p-4'>
       {/* <MainHeader /> */}
       {/* <MainHero /> */}
       {/* <View className='flex-row justify-between'> */}
@@ -43,6 +44,7 @@ export default function App() {
         />
       </View>
       <StatusBar style="auto" />
+    </View>
     </View>
   );
 }
