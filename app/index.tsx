@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { FlatList, View } from 'react-native';
+import { FlatList, Text, View } from 'react-native';
 import Card from '../components/Card';
 // import MainHeader from '../components/MainHeader';
 import { StatusBar } from 'expo-status-bar';
@@ -13,10 +13,24 @@ export default function App() {
   
 
   return (
-    <View>
+    <View className='m-4'>
       {/* <MainHeader /> */}
       {/* <MainHero /> */}
-      <View className='justify-center mx-3'>
+      {/* <View className='flex-row justify-between'> */}
+      {/* <View className='border-2 border-b-4 border-r-4 rounded-lg p-4'>
+        <View className='flex-row justify-between'>
+        <View className='items-center'>
+            <Text className='text-2xl font-bold px-2'>Progress</Text>
+            <Text className='text-3xl font-bold'>0%</Text>
+          </View>
+          <View className='items-center'>
+            <Text className='text-2xl font-bold px-2'>High Score</Text>
+            <Text className='text-3xl font-bold'>0</Text>
+          </View>
+        </View>
+      </View> */}
+      {/* </View> */}
+      <View className='justify-center'>
         <FlatList
           data={cardData}
           renderItem={({ item }) => 

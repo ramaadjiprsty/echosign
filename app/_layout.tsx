@@ -14,9 +14,10 @@ export default function RootLayout() {
         headerTitleStyle: {
           fontWeight: 'bold',
           fontSize: 24,
+          color: 'black',
         },
       }}>
-      <Stack.Screen name="index" options={{ title: 'Home'}} />
+      <Stack.Screen name="index" options={{ title: 'Home', headerShadowVisible: true, headerTitleAlign: 'center'}} />
       <Stack.Screen name='(screen)' options={{ headerShown: false}}/>
     </Stack>
   );
