@@ -11,7 +11,7 @@ type CardParam = {
 const Card = ({ title, image, color, onPress }: CardParam) => {
   return (
     <View className='bg-black m-2 translate-x-1.5 translate-y-1.5'>
-      <TouchableOpacity onPress={onPress} className={`overflow-hidden border-2 shadow -translate-x-1.5 -translate-y-1.5  ${color}`} style={styles.radiusCard}>
+      <TouchableOpacity activeOpacity={0.8} onPress={onPress} className={`overflow-hidden border-2 shadow -translate-x-1.5 -translate-y-1.5  ${color}`} style={styles.radiusCard}>
         <View className="flex-row p-4 w-full items-center "> {/* Changed to flex-row */}
           <View className="flex-1"> {/* This allows the title to take available space */}
             <Text className="text-3xl font-semibold">{title}</Text>

@@ -6,22 +6,23 @@ const Introduction = () => {
   return (
     <ScrollView className="">
       <View className="m-4">
+        <View className="bg-black translate-x-1.5 translate-y-1.5">
         <View
-          className="border-2 border-b-[6px] border-r-[6px] p-2"
-          style={styles.radiusCard}
+          className="border-2 bg-white p-2 -translate-x-1.5 -translate-y-1.5"
         >
           <Image
             source={images.introbanner}
             className="h-32 w-full"
-            style={styles.radiusImage}
           />
           <Text className="text-2xl font-bold">
             Mari Mengenal Lebih Dalam Tentang Bahasa Isyarat Indonesia
           </Text>
         </View>
+        </View>
+        <View className="bg-black mt-4 translate-x-1.5 translate-y-1.5">
         <View
-          className="border-2 border-b-[6px] border-r-[6px] p-2 mt-2 text-justify"
-          style={styles.radiusCard}
+          className="border-2 p-2 bg-white  text-justify -translate-x-1.5 -translate-y-1.5"
+          // style={styles.radiusCard}
         >
           <Text className="text-xl p-2" style={styles.cardContent}>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic eum
@@ -50,6 +51,7 @@ const Introduction = () => {
             doloremque consequuntur.
           </Text>
         </View>
+        </View>
       </View>
     </ScrollView>
   );
@@ -57,7 +59,7 @@ const Introduction = () => {
 
 const styles = StyleSheet.create({
   radiusCard: {
-    borderRadius: 18,
+    marginTop: 10,
   },
   radiusImage: {
     borderRadius: 10,
