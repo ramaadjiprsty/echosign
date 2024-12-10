@@ -14,6 +14,7 @@ export default function RootLayout() {
     "Lexend-Bold": require("../assets/fonts/LexendMega-Bold.ttf"),
     "Lexend-ExtraBold": require("../assets/fonts/LexendMega-ExtraBold.ttf"),
     "Lexend-Black": require("../assets/fonts/LexendMega-Black.ttf"),
+    "Erica One": require("../assets/fonts/EricaOne-Regular.ttf"),
   })
 
   useEffect(() => {

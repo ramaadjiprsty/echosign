@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList, Image, Text, View, StyleSheet } from 'react-native';
 import Card from '../components/Card';
 // import MainHeader from '../components/MainHeader';
 import { StatusBar } from 'expo-status-bar';
@@ -13,8 +13,20 @@ export default function App() {
   
 
   return (
-    <View className='h-full w-full bg-violet-500'>
+    <View className='h-full w-full bg-yellow-300'>
     <View className='m-4'>
+      <View className='bg-black translate-x-1.5 translate-y-1.5 h-40'>
+        <View className='bg-white -translate-x-2 -translate-y-2 h-full flex-row justify-between items-center'>
+          <Text className='text-6xl font-ericaone ml-4 mx-auto text-amber-300 shadow-black' style={styles.textStyle}>{`Echo \nSign`}</Text>
+          <View className='border-2 contain-size h-32 w-1/2 bg-yellow-300 mr-4 rounded-lg'>
+            <Image 
+            source={require('../assets/images/sign-language-logo.png')} 
+            className='h-full w-full mt-3' 
+            resizeMode='center'
+            />
+          </View>
+        </View>
+      </View>
       {/* <MainHeader /> */}
       {/* <MainHero /> */}
       {/* <View className='flex-row justify-between'> */}
@@ -31,7 +43,7 @@ export default function App() {
         </View>
       </View> */}
       {/* </View> */}
-      <View className='justify-center'>
+      <View className='justify-center mt-4'>
         <FlatList
           data={cardData}
           renderItem={({ item }) => 
@@ -48,3 +60,11 @@ export default function App() {
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  textStyle: {
+    textShadowOffset: {width: 4, height: 4},
+    textShadowColor: 'black',
+    textShadowRadius: 1
+  },
+});

@@ -18,6 +18,7 @@ module.exports = {
         lexbold: ["Lexend-Bold", "sans-serif"],
         lexextrabold: ["Lexend-ExtraBold", "sans-serif"],
         lexblack: ["Lexend-Black", "sans-serif"],
+        ericaone: ["Erica One", "sans-serif"],
       }
     },
   },
