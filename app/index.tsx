@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { FlatList, Image, Text, View, StyleSheet } from 'react-native';
+import { FlatList, Image, Text, View, StyleSheet, ScrollView } from 'react-native';
 import Card from '../components/Card';
 // import MainHeader from '../components/MainHeader';
 import { StatusBar } from 'expo-status-bar';
@@ -13,7 +13,7 @@ export default function App() {
   
 
   return (
-    <View className='h-full w-full bg-yellow-300'>
+    <ScrollView className='h-full w-full bg-yellow-300'>
     <View className='m-4'>
       <View className='bg-black translate-x-1.5 translate-y-1.5 h-40'>
         <View className='bg-white -translate-x-2 -translate-y-2 h-full flex-row justify-between items-center'>
@@ -27,22 +27,6 @@ export default function App() {
           </View>
         </View>
       </View>
-      {/* <MainHeader /> */}
-      {/* <MainHero /> */}
-      {/* <View className='flex-row justify-between'> */}
-      {/* <View className='border-2 border-b-4 border-r-4 rounded-lg p-4'>
-        <View className='flex-row justify-between'>
-        <View className='items-center'>
-            <Text className='text-2xl font-bold px-2'>Progress</Text>
-            <Text className='text-3xl font-bold'>0%</Text>
-          </View>
-          <View className='items-center'>
-            <Text className='text-2xl font-bold px-2'>High Score</Text>
-            <Text className='text-3xl font-bold'>0</Text>
-          </View>
-        </View>
-      </View> */}
-      {/* </View> */}
       <View className='justify-center mt-4'>
         <FlatList
           data={cardData}
@@ -57,7 +41,7 @@ export default function App() {
       </View>
       <StatusBar style="auto" />
     </View>
-    </View>
+    </ScrollView>
   );
 }
 

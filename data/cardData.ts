@@ -2,10 +2,10 @@ import { ImageSourcePropType } from "react-native";
 import icons from "../constants/icons"
 
 enum CardTitle {
-  INTRODUCTION = "Pengenalan",
-  LEARNING = "Belajar",
-  EXERCISE = "Latihan",
-  ABOUT = "Tentang",
+  INTRODUCTION = "Introduction",
+  LEARNING = "Learning",
+  EXERCISE = "Exercise",
+  ABOUT = "About",
 }
 
 interface CardData {
