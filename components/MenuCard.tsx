@@ -8,7 +8,7 @@ type CardParam = {
   onPress?: () => void;
 }
 
-const Card = ({ title, image, color, onPress }: CardParam) => {
+const MenuCard = ({ title, image, color, onPress }: CardParam) => {
   return (
     <View className='bg-black m-2 translate-x-1.5 translate-y-1.5'>
       <TouchableOpacity activeOpacity={0.8} onPress={onPress} className={`overflow-hidden border-2 shadow -translate-x-1.5 -translate-y-1.5  ${color}`}>
@@ -23,4 +23,4 @@ const Card = ({ title, image, color, onPress }: CardParam) => {
   );
 };
 
-export default Card;
+export default MenuCard;

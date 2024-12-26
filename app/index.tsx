@@ -1,16 +1,16 @@
 import { router } from 'expo-router';
 import { FlatList, Image, Text, View, StyleSheet, ScrollView } from 'react-native';
-import Card from '../components/Card';
-// import MainHeader from '../components/MainHeader';
+import MenuCard from '../components/MenuCard';
 import { StatusBar } from 'expo-status-bar';
 import { cardData } from '../data/cardData'; //
 import '../global.css';
+import images from "../constants/images";
 
 export default function App() {
   const handlePress = (destination: string) => {
     router.push(destination)
   }
-  
+
 
   return (
     <ScrollView className='h-full w-full bg-yellow-300'>
@@ -19,9 +19,9 @@ export default function App() {
         <View className='bg-white -translate-x-2 -translate-y-2 h-full flex-row justify-between items-center'>
           <Text className='text-6xl font-ericaone ml-4 mx-auto text-amber-300 shadow-black' style={styles.textStyle}>{`Echo \nSign`}</Text>
           <View className='border-2 contain-size h-32 w-1/2 bg-yellow-300 mr-4 rounded-lg'>
-            <Image 
-            source={require('../assets/images/sign-language-logo.png')} 
-            className='h-full w-full mt-3' 
+            <Image
+            source={images.signLanguangeLogo}
+            className='h-full w-full mt-3'
             resizeMode='center'
             />
           </View>
@@ -30,11 +30,11 @@ export default function App() {
       <View className='justify-center mt-4'>
         <FlatList
           data={cardData}
-          renderItem={({ item }) => 
-              <Card 
-                title={item.key} 
-                image={item.image} 
-                color={item.color} 
+          renderItem={({ item }) =>
+              <MenuCard
+                title={item.key}
+                image={item.image}
+                color={item.color}
                 onPress={() => handlePress(item.destination)} />}
           keyExtractor={item => item.key}
         />
