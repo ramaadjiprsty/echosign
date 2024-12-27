@@ -14,15 +14,14 @@ const ScreenLayout = () => {
           color: 'white',
         },
       }}
-      >
-      <Stack.Screen name="introduction" options={{ title: 'Introduction'}} />
-      <Stack.Screen name="learning" options={{ title: 'Learning'}} />
-      <Stack.Screen name="exercise" options={{ title: 'Exercise'}} />
-      <Stack.Screen name="about" options={{ title: 'About'}} />
+    >
+      <Stack.Screen name="home" />
+      <Stack.Screen name="introduction" options={{ title: 'Introduction' }} />
+      <Stack.Screen name="learning" options={{ title: 'Learning' }} />
+      <Stack.Screen name="exercise" options={{ title: 'Exercise' }} />
+      <Stack.Screen name="about" options={{ title: 'About' }} />
     </Stack>
   );
-}
+};
 
-export default ScreenLayout
-
-
+export default ScreenLayout;

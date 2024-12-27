@@ -21,9 +21,9 @@ const FormField = ({
     <View className={`space-y-2`}>
       <Text className="text-base font-medium">{title}</Text>
 
-      <View className="w-full h-16 px-4 bg-white border-2 border-black rounded-2xl focus:border-blue-400 flex-row">
+      <View className="w-full h-16 px-4 bg-white border-2 border-black rounded-2xl focus:border-blue-400 items-center flex-row">
         <TextInput
-          className="flex-1 text-white font-semibold text-base"
+          className="flex-1 text-black font-semibold text-base"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
@@ -44,3 +44,5 @@ const FormField = ({
     </View>
   );
 };
+
+export default FormField;
