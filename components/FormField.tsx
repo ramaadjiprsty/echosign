@@ -1,5 +1,5 @@
 import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import React from 'react';
+import React, { useState } from 'react';
 import icons from '../constants/icons';
 
 interface FormProps {
@@ -15,19 +15,25 @@ const FormField = ({
   placeholder,
   handleChangeText,
 }: FormProps) => {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [isFocused, setFocused] = useState(false);
 
   return (
     <View className={`space-y-2`}>
-      <Text className="text-base font-medium">{title}</Text>
+      <Text className="text-lg font-medium ml-1">{title}</Text>
 
-      <View className="w-full h-16 px-4 bg-white border-2 border-black rounded-2xl focus:border-blue-400 items-center flex-row">
+      <View
+        className={`border w-full h-16 px-4 rounded-xl items-center flex-row ${isFocused ? 'border-blue-400' : 'border-black'}`}
+      >
         <TextInput
           className="flex-1 text-black font-semibold text-base"
           value={value}
           placeholder={placeholder}
           placeholderTextColor="#7b7b8b"
           onChangeText={handleChangeText}
+          autoCapitalize="none"
+          onFocus={() => setFocused(true)}
+          onBlur={() => setFocused(false)}
           secureTextEntry={title == 'Password' && !showPassword}
         />
 

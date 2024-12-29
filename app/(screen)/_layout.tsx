@@ -15,7 +15,7 @@ const ScreenLayout = () => {
         },
       }}
     >
-      <Stack.Screen name="home" />
+      <Stack.Screen name="home" options={{ title: 'Home' }} />
       <Stack.Screen name="introduction" options={{ title: 'Introduction' }} />
       <Stack.Screen name="learning" options={{ title: 'Learning' }} />
       <Stack.Screen name="exercise" options={{ title: 'Exercise' }} />

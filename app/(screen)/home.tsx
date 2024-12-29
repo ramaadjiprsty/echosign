@@ -13,7 +13,7 @@ import MenuCard from '../../components/MenuCard';
 import { StatusBar } from 'expo-status-bar';
 import { router } from 'expo-router';
 
-const HomeScreen = () => {
+const Home = () => {
   const handlePress = (destination: string) => {
     router.push(destination);
   };
@@ -63,3 +63,5 @@ const styles = StyleSheet.create({
     textShadowRadius: 1,
   },
 });
+
+export default Home;
