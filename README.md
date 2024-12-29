@@ -1,4 +1,4 @@
-<h1>Work In Progress</h1>
+<h1 align="center">---Work In Progress---</h1>
 
 Echo Sign adalah aplikasi mobile inovatif yang dirancang untuk membantu pengguna mempelajari Bahasa Isyarat Indonesia (BISINDO). Dengan antarmuka yang ramah pengguna dan teknologi modern, Echo Sign memberikan pengalaman belajar yang menyenangkan dan efektif.
 
