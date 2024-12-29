@@ -11,6 +11,8 @@ import FormField from '../../components/FormField';
 import { router } from 'expo-router';
 import { supabase } from '../../lib/supabase';
 import images from '../../constants/images';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { StatusBar } from 'expo-status-bar';
 
 const SignUpLayout = () => {
   const [loading, setLoading] = useState(false);
@@ -52,7 +54,7 @@ const SignUpLayout = () => {
   }
 
   return (
-    <View>
+    <SafeAreaView>
       <View className="h-1/3 my-4 border-b">
         <Image
           source={images.signLanguangePic}
@@ -98,7 +100,8 @@ const SignUpLayout = () => {
           </Text>
         </View>
       </View>
-    </View>
+      <StatusBar style="auto" />
+    </SafeAreaView>
   );
 };
 
