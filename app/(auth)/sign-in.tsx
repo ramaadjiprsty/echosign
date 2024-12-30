@@ -13,13 +13,12 @@ import { supabase } from '../../lib/supabase';
 import images from '../../constants/images';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { Button } from '../../components/Button';
+import { useAuthForm } from '../../hooks/useAuthForm';
 
 const SignInLayout = () => {
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    email: '',
-    password: '',
-  });
+  const { form, updateField } = useAuthForm();
 
   async function signInWithEmail() {
     setLoading(true);
@@ -55,32 +54,28 @@ const SignInLayout = () => {
           title="Email"
           value={form.email}
           placeholder="email@eexample.com"
-          handleChangeText={(e) => setForm({ ...form, email: e })}
+          handleChangeText={(e) => updateField('email', e)}
         />
 
         <FormField
           title="Password"
           value={form.password}
           placeholder="Password"
-          handleChangeText={(e) => setForm({ ...form, password: e })}
+          handleChangeText={(e) => updateField('password', e)}
         />
 
         <View className="mt-4 justify-center items-center">
-          <TouchableOpacity
-            activeOpacity={0.8}
+          <Button
+            title="LOGIN"
             onPress={() => signInWithEmail()}
-            disabled={loading} // Disable button while loading
-            className="h-16 w-full justify-center items-center rounded-xl bg-blue-400 mb-2"
-          >
-            <Text className="font-bold text-lg text-white">
-              {loading ? <ActivityIndicator size="small" /> : 'SIGN IN'}
-            </Text>
-          </TouchableOpacity>
+            disabled={loading || !form.email || !form.password}
+            otherStyle={`${!form.email || !form.password ? 'bg-gray-300' : 'bg-blue-400'}`}
+          />
           <Text>
             Dont Have an Account?{' '}
             <Text
               className="text-blue-500"
-              onPress={() => router.replace('sign-up')}
+              onPress={() => router.replace('/sign-up')}
             >
               Sign Up here
             </Text>

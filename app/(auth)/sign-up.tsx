@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  Image,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Alert, Image, Text, View } from 'react-native';
 import FormField from '../../components/FormField';
 import { router } from 'expo-router';
 import { supabase } from '../../lib/supabase';
 import images from '../../constants/images';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { StatusBar } from 'expo-status-bar';
+import { Button } from '../../components/Button';
+import { useAuthForm } from '../../hooks/useAuthForm';
 
 const SignUpLayout = () => {
   const [loading, setLoading] = useState(false);
-  const [form, setForm] = useState({
-    email: '',
-    password: '',
-  });
+  const { form, updateField, resetForm } = useAuthForm();
 
   async function signUpWithEmail() {
     setLoading(true);
@@ -45,10 +37,7 @@ const SignUpLayout = () => {
           },
         ],
       );
-      setForm({
-        email: '',
-        password: '',
-      });
+      resetForm();
     }
     setLoading(false);
   }
@@ -68,32 +57,28 @@ const SignUpLayout = () => {
           title="Email"
           value={form.email}
           placeholder="email@eexample.com"
-          handleChangeText={(e) => setForm({ ...form, email: e })}
+          handleChangeText={(e) => updateField('email', e)}
         />
 
         <FormField
           title="Password"
           value={form.password}
           placeholder="Password"
-          handleChangeText={(e) => setForm({ ...form, password: e })}
+          handleChangeText={(e) => updateField('password', e)}
         />
 
         <View className="mt-4 justify-center items-center">
-          <TouchableOpacity
-            activeOpacity={0.8}
+          <Button
+            title="CREATE ACCOUNT"
             onPress={() => signUpWithEmail()}
-            disabled={!form.email || !form.password || loading}
-            className={`h-16 w-full justify-center items-center rounded-xl bg-blue-400 mb-2 ${!form.email || !form.password ? 'bg-gray-300' : 'bg-blue-400'}`}
-          >
-            <Text className="font-bold text-lg text-white">
-              {loading ? <ActivityIndicator size="small" /> : 'CREATE ACCOUNT'}
-            </Text>
-          </TouchableOpacity>
+            disabled={loading || !form.email || !form.password}
+            otherStyle={`${!form.email || !form.password ? 'bg-gray-300' : 'bg-blue-400'}`}
+          />
           <Text>
             Already have an account?{' '}
             <Text
               className="text-blue-500"
-              onPress={() => router.push('/sign-in')}
+              onPress={() => router.replace('/sign-in')}
             >
               Sign In here
             </Text>
