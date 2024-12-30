@@ -1,12 +1,5 @@
 import React, { useState } from 'react';
-import {
-  ActivityIndicator,
-  Alert,
-  Image,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import { Alert, Image, Text, View } from 'react-native';
 import FormField from '../../components/FormField';
 import { router } from 'expo-router';
 import { supabase } from '../../lib/supabase';
@@ -55,6 +48,7 @@ const SignInLayout = () => {
           value={form.email}
           placeholder="email@eexample.com"
           handleChangeText={(e) => updateField('email', e)}
+          keyboardType="email-address"
         />
 
         <FormField

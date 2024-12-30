@@ -1,11 +1,16 @@
-import { Image, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import {
+  Image,
+  Text,
+  TextInput,
+  TextInputProps,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import React, { useState } from 'react';
 import icons from '../constants/icons';
 
-interface FormProps {
+interface FormProps extends TextInputProps {
   title: string;
-  value: string;
-  placeholder: string;
   handleChangeText: (text: string) => void;
 }
 
