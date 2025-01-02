@@ -20,20 +20,20 @@ export default function App() {
     });
   }, []);
 
-  // const handlePress = async () => {
-  //   if (!session) {
-  //     router.push('/sign-in');
-  //   } else {
-  //     router.push('/home');
-  //   }
-  // };
+  const handlePress = async () => {
+    if (!session) {
+      router.push('/sign-in');
+    } else {
+      router.push('/home');
+    }
+  };
 
   return (
     <SafeAreaView className="h-full">
       <View className="flex-1 justify-center content-center items-center">
         <Text className="text-3xl font-bold">ONBOARDING APP</Text>
         <TouchableOpacity
-          onPress={() => router.push('/sign-in')}
+          onPress={() => handlePress()}
           className="bg-orange-400 p-4 rounded-xl"
         >
           <Text>Continue</Text>
