@@ -28,7 +28,7 @@ export const Button = ({
       className={`h-16 w-full justify-center items-center rounded-xl bg-blue-400 mb-2 ${otherStyle}`}
     >
       <Text className="font-bold text-lg text-white">
-        {isLoading ? <ActivityIndicator /> : title}
+        {isLoading ? <ActivityIndicator size={'small'} /> : title}
       </Text>
     </TouchableOpacity>
   );

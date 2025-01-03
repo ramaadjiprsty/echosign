@@ -21,22 +21,23 @@ const SignUpLayout = () => {
     } = await supabase.auth.signUp({
       email: form.email,
       password: form.password,
+      options: {
+        data: {
+          username: form.username,
+        },
+      },
     });
 
     if (error) Alert.alert(error.message);
     if (!session) {
-      Alert.alert(
-        'Account Created',
-        'Please check your inbox for email verification',
-        [
-          {
-            text: 'OK',
-            onPress: () => {
-              router.replace('/sign-in');
-            },
+      Alert.alert('Account Created', 'Please Check your email', [
+        {
+          text: 'OK',
+          onPress: () => {
+            router.replace('/sign-in');
           },
-        ],
-      );
+        },
+      ]);
       resetForm();
     }
     setLoading(false);
@@ -53,6 +54,13 @@ const SignUpLayout = () => {
       </View>
       <View className="px-4">
         <Text className="text-4xl font-bold mb-4">Create Account</Text>
+        <FormField
+          title="Username"
+          value={form.username}
+          placeholder="john doe"
+          handleChangeText={(e) => updateField('username', e)}
+        />
+
         <FormField
           title="Email"
           value={form.email}

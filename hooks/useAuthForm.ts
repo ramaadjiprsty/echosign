@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
 interface UseAuthFormProps {
-  initialValues?: { email: string; password: string };
+  initialValues?: { username: string; email: string; password: string };
 }
 
 export const useAuthForm = ({
-  initialValues = { email: '', password: '' },
+  initialValues = { username: '', email: '', password: '' },
 }: UseAuthFormProps = {}) => {
   const [form, setForm] = useState(initialValues);
 

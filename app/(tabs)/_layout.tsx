@@ -28,14 +28,14 @@ const TabLayout = () => {
         options={{
           title: 'Exercise',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name="book" color={color} />
+            <FontAwesome size={28} name={'book'} color={color} />
           ),
         }}
       />
       <Tabs.Screen
         name="setting"
         options={{
-          title: 'Home',
+          title: 'Setting',
           tabBarIcon: ({ color }) => (
             <FontAwesome size={28} name={'cog'} color={color} />
           ),
