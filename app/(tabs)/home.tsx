@@ -4,6 +4,7 @@ import { Alert, Text, View } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import CategoryCard from '../../components/CategoryCard';
 import icons from '../../constants/icons';
+import { router } from 'expo-router';
 
 const Home = () => {
   const [username, setUsername] = useState('');
@@ -48,10 +49,26 @@ const Home = () => {
       </View>
       <Text className="text-2xl font-semibold p-6">Your Lesson</Text>
       <View className="mx-6">
-        <CategoryCard title="Alphabet" image={icons.alphabet} />
-        <CategoryCard title="Number" image={icons.numbers} />
-        <CategoryCard title="Word" image={icons.word} />
-        <CategoryCard title="Affix" image={icons.affix} />
+        <CategoryCard
+          title="Alphabet"
+          image={icons.alphabet}
+          handlePress={() => router.push('/alphabet')}
+        />
+        <CategoryCard
+          title="Number"
+          image={icons.numbers}
+          handlePress={() => router.push('/numbers')}
+        />
+        <CategoryCard
+          title="Word"
+          image={icons.word}
+          handlePress={() => router.push('/word')}
+        />
+        <CategoryCard
+          title="Affix"
+          image={icons.affix}
+          handlePress={() => router.push('/affix')}
+        />
       </View>
       <StatusBar style="auto" />
     </View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs } from 'expo-router';
+import { Stack, Tabs } from 'expo-router';
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 
 const TabLayout = () => {
@@ -37,7 +37,7 @@ const TabLayout = () => {
         options={{
           title: 'About',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name={'exclamation'} color={color} />
+            <FontAwesome size={28} name={'exclamation-circle'} color={color} />
           ),
         }}
       />
