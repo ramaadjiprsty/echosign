@@ -33,11 +33,11 @@ const TabLayout = () => {
         }}
       />
       <Tabs.Screen
-        name="setting"
+        name="about"
         options={{
-          title: 'Setting',
+          title: 'About',
           tabBarIcon: ({ color }) => (
-            <FontAwesome size={28} name={'cog'} color={color} />
+            <FontAwesome size={28} name={'exclamation'} color={color} />
           ),
         }}
       />

@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { Button } from '../../components/Button';
 import { supabase } from '../../lib/supabase';
-import { router } from 'expo-router';
-import { Alert, Text } from 'react-native';
+import { Alert, Text, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import CategoryCard from '../../components/CategoryCard';
+import icons from '../../constants/icons';
 
 const Home = () => {
   const [username, setUsername] = useState('');
-
   const fetchUsername = async () => {
     try {
       const {
@@ -40,9 +39,22 @@ const Home = () => {
   }, []);
 
   return (
-    <SafeAreaView>
-      <Text>Test {username}</Text>
-    </SafeAreaView>
+    <View className="h-full bg-slate-300">
+      <View className="h-1/4 bg-white rounded-b-3xl flex justify-end">
+        <View className="p-6">
+          <Text className="text-2xl">Hello {username},</Text>
+          <Text className="text-3xl font-bold">Lets Learn Sign Language!</Text>
+        </View>
+      </View>
+      <Text className="text-2xl font-semibold p-6">Your Lesson</Text>
+      <View className="mx-6">
+        <CategoryCard title="Alphabet" image={icons.alphabet} />
+        <CategoryCard title="Number" image={icons.numbers} />
+        <CategoryCard title="Word" image={icons.word} />
+        <CategoryCard title="Affix" image={icons.affix} />
+      </View>
+      <StatusBar style="auto" />
+    </View>
   );
 };
 

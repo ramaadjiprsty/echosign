@@ -4,7 +4,7 @@ import { Button } from '../../components/Button';
 import { supabase } from '../../lib/supabase';
 import { router } from 'expo-router';
 
-const Setting = () => {
+const About = () => {
   const handleLogout = async () => {
     await supabase.auth.signOut();
     router.push('/sign-in');
@@ -17,4 +17,4 @@ const Setting = () => {
   );
 };
 
-export default Setting;
+export default About;
