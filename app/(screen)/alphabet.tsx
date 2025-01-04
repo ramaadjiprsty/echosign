@@ -10,7 +10,7 @@ const Alphabet = () => {
   );
 
   return (
-    <View className="p-4">
+    <View className="px-4">
       <FlatList
         data={alphabetData}
         numColumns={2}
