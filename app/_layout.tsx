@@ -4,7 +4,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useFonts } from 'expo-font';
 
 export default function RootLayout() {
-  const [fonstLoaded, error] = useFonts({
+  const [fontsLoaded, error] = useFonts({
     'Lexend-Thin': require('../assets/fonts/LexendMega-Thin.ttf'),
     'Lexend-ExtraLight': require('../assets/fonts/LexendMega-ExtraLight.ttf'),
     'Lexend-Light': require('../assets/fonts/LexendMega-Light.ttf'),
@@ -19,10 +19,10 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (error) throw error;
-    if (fonstLoaded) SplashScreen.hideAsync();
-  }, [fonstLoaded, error]);
+    if (fontsLoaded) SplashScreen.hideAsync();
+  }, [fontsLoaded, error]);
 
-  if (!fonstLoaded && !error) return null;
+  if (!fontsLoaded && !error) return null;
 
   return (
     <Stack
