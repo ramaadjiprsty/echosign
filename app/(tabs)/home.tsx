@@ -5,6 +5,8 @@ import { StatusBar } from 'expo-status-bar';
 import CategoryCard from '../../components/CategoryCard';
 import icons from '../../constants/icons';
 import { router } from 'expo-router';
+import WebView from 'react-native-webview';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Home = () => {
   const [username, setUsername] = useState('');

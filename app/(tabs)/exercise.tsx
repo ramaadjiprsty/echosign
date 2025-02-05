@@ -1,13 +1,10 @@
-import { View, Text } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import WebView from 'react-native-webview';
+import { StyleSheet } from 'react-native';
 
 const Exercise = () => {
-  return (
-    <SafeAreaView>
-      <Text>Exercise</Text>
-    </SafeAreaView>
-  );
+
 };
 
 export default Exercise;

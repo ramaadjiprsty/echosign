@@ -9,8 +9,9 @@ const TabLayout = () => {
         tabBarActiveTintColor: 'blue',
         headerShown: false,
         tabBarStyle: {
-          paddingTop: 12,
           height: 70,
+          paddingTop: 10,
+          alignContent: 'center',
         },
       }}
     >
